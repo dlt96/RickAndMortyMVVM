@@ -1,9 +1,6 @@
-apply plugin: 'com.android.application'
-
+apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
-
 apply plugin: 'kotlin-kapt'
 
 def dep = rootProject.ext
@@ -11,14 +8,18 @@ def dep = rootProject.ext
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.1"
+
+
     defaultConfig {
-        applicationId "com.example.rickandmortymvvm"
         minSdkVersion 26
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
     }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -26,43 +27,38 @@ android {
         }
     }
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     implementation project(path: "$dep.modules.domain")
-    implementation project(path: "$dep.modules.presentation")
-    implementation project(path: "$dep.modules.data")
 
     implementation "$dep.android.constraintlayout"
     implementation "$dep.android.appcompat"
     implementation "$dep.android.recyclerView"
     implementation "$dep.android.viewmodelKtx"
-
-    implementation "$dep.kotlin.stdlib"
-    implementation "$dep.kotlin.ktx"
+    implementation "$dep.android.lifecycleExt"
+    kapt "$dep.android.lifecycleKapt"
+    implementation "$dep.android.material"
 
     implementation "$dep.koin.core"
     implementation "$dep.koin.viewmodel"
 
+    implementation "$dep.kotlin.stdlib"
+    implementation "$dep.kotlin.ktx"
+
     implementation "$dep.glide.glide"
     annotationProcessor "$dep.glide.compiler"
 
-    implementation "$dep.network.core"
-    implementation "$dep.network.converter"
-    implementation "$dep.network.gson"
+    implementation "$dep.coroutines.core"
+    implementation "$dep.coroutines.android"
 
-    implementation "$dep.db.room"
-    kapt "$dep.db.roomKapt"
-
+    testImplementation "$dep.test.core"
     testImplementation "$dep.test.junit"
+    testImplementation "$dep.test.mockk"
+    testImplementation "$dep.test.coroutines"
+
     androidTestImplementation "$dep.androidTest.runner"
-    androidTestImplementation "$dep.androidTest.espresso"
     androidTestImplementation "$dep.androidTest.rules"
-    androidTestImplementation "$dep.androidTest.espressoContrib"
 }

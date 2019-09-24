@@ -1,7 +1,8 @@
-package com.example.rickandmortymvvm
+package com.example.rickandmortymvvm.presentation.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.rickandmortymvvm.R
 
 class MainActivity : AppCompatActivity() {
 
