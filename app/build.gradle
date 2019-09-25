@@ -55,7 +55,8 @@ dependencies {
 
     implementation "$dep.network.core"
     implementation "$dep.network.converter"
-    implementation "$dep.network.gson"
+    implementation "$dep.network.coroutines"
+    implementation "$dep.network.moshi"
 
     implementation "$dep.db.room"
     kapt "$dep.db.roomKapt"
