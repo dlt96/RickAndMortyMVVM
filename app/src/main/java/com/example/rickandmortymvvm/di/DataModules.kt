@@ -7,7 +7,7 @@ object DataModules {
 
     val remoteServiceModule = module {
         single {
-            RickAndMortyServiceAPI()
+            RickAndMortyServiceAPI().getRickAndMortyService()
         }
     }
 }

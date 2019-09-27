@@ -26,7 +26,8 @@ ext {
             material        : "1.0.0",
             retrofit        : "2.6.0",
             moshi           : "1.8.0",
-            rules           : "1.2.0"
+            rules           : "1.2.0",
+            threeten        : "1.2.1"
 
     ]
 
@@ -86,5 +87,9 @@ ext {
     glide = [
             glide   : "com.github.bumptech.glide:glide:$versions.glide",
             compiler: "com.github.bumptech.glide:compiler:$versions.glide"
+    ]
+
+    date = [
+            threeten: "com.jakewharton.threetenabp:threetenabp:$versions.threeten"
     ]
 }

@@ -39,6 +39,8 @@ dependencies {
     implementation "$dep.coroutines.core"
     implementation "$dep.coroutines.android"
 
+    implementation "$dep.date.threeten"
+
     testImplementation "$dep.test.core"
     testImplementation "$dep.test.junit"
     testImplementation "$dep.test.mockk"

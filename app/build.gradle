@@ -61,6 +61,8 @@ dependencies {
     implementation "$dep.db.room"
     kapt "$dep.db.roomKapt"
 
+    implementation "$dep.date.threeten"
+
     testImplementation "$dep.test.junit"
     androidTestImplementation "$dep.androidTest.runner"
     androidTestImplementation "$dep.androidTest.espresso"

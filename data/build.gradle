@@ -49,6 +49,8 @@ dependencies {
     kapt "$dep.db.roomKapt"
     implementation "$dep.db.roomExt"
 
+    implementation "$dep.date.threeten"
+
     testImplementation "$dep.test.core"
     testImplementation "$dep.test.junit"
     testImplementation "$dep.test.mockk"
