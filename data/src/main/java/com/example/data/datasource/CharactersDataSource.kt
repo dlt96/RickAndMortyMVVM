@@ -7,5 +7,5 @@ import kotlinx.coroutines.Deferred
 interface CharactersDataSource {
 
     @WorkerThread
-    fun fetchCharacters(page: Int): Deferred<CharacterPageEntity?>
+    suspend fun fetchCharacters(page: Int): CharacterPageEntity?
 }
