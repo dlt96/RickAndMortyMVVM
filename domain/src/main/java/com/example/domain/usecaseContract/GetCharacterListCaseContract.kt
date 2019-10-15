@@ -2,9 +2,9 @@ package com.example.domain.usecaseContract
 
 import com.example.domain.datatype.Either
 import com.example.domain.model.CharacterListModel
-import java.lang.Exception
+import com.example.domain.model.ErrorModel
 
 interface GetCharacterListCaseContract {
 
-    suspend fun getPage(page: Int?): Either<Exception, CharacterListModel>
+    suspend fun getPage(page: Int?): Either<ErrorModel, CharacterListModel>
 }

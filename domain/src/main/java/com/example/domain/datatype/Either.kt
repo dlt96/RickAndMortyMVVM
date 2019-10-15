@@ -9,10 +9,10 @@ sealed class Either<out E, out V> {
     fun <V> value(value: V): Either<Nothing, V> = Either.Value(value)
     fun <E> error(value: E): Either<E, Nothing> = Either.Error(value)
 
-    inline fun <V> either(action: () -> V): Either<Exception, V> =
+    inline fun <V> either(action: () -> V): Either<Throwable, V> =
         try {
             value(action())
-        } catch (e: Exception) {
+        } catch (e: Throwable) {
             error(e)
         }
 

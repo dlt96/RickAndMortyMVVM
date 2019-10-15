@@ -5,8 +5,8 @@ object DiModulesBuilder {
         DataModules.remoteServiceModule,
         DataModules.apiModule,
         DataModules.repository,
+        DataModules.errorHandler,
         DomainModules.useCaseModules
-//        DomainModules,
 //        PresentationModules
     )
 }

@@ -1,6 +1,6 @@
 package com.example.data.mapper
 
-import com.example.data.entity.CharacterListEntity
+import com.example.data.model.CharacterListEntity
 import com.example.data.utils.DateUtils.stringToDate
 import com.example.domain.model.CharacterListModel
 import com.example.domain.model.CharacterModel

@@ -1,6 +1,6 @@
 package com.example.data.service
 
-import com.example.data.entity.CharacterListEntity
+import com.example.data.model.CharacterListEntity
 import retrofit2.http.GET
 import retrofit2.http.Query
 
