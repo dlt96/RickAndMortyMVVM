@@ -1,5 +1,3 @@
 package com.example.presentation.model
 
-import java.lang.Exception
-
-data class ErrorDisplayModel(val error: Exception)
+data class ErrorDisplayModel(val message: String)
