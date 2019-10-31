@@ -16,6 +16,7 @@ import com.example.presentation.mapper.CharacterDisplayMapper
 import com.example.presentation.mapper.ErrorDisplayMapper
 import com.example.presentation.model.CharacterDisplayModel
 import com.example.presentation.model.ErrorDisplayModel
+import com.example.presentation.model.TransitionDisplay
 import kotlinx.coroutines.launch
 
 class CharactersViewModel(
@@ -28,6 +29,12 @@ class CharactersViewModel(
 
     private val characterList =
         MutableLiveData<Either<ErrorModel, CharacterListModel>>()
+
+    private val selectedItemDisplay = MutableLiveData<TransitionDisplay?>()
+
+    val detailDisplay: LiveData<TransitionDisplay?> = Transformations.map(selectedItemDisplay) { display ->
+        display
+    }
 
     val listDisplay: LiveData<Either<ErrorDisplayModel, List<CharacterDisplayModel>>> =
         Transformations.map(characterList) {
@@ -43,6 +50,10 @@ class CharactersViewModel(
 
     fun start() {
         loadCharacters()
+    }
+
+    fun onItemSelected(item: TransitionDisplay?) {
+        selectedItemDisplay.value = item
     }
 
     fun onFinishPage() {
@@ -65,5 +76,14 @@ class CharactersViewModel(
                     })
             }
         }
+    }
+
+    fun onPressBack() {
+        selectedItemDisplay.value = null
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        job.cancel()
     }
 }

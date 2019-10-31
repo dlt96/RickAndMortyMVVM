@@ -27,7 +27,8 @@ ext {
             retrofit        : "2.6.0",
             moshi           : "1.8.0",
             rules           : "1.2.0",
-            threeten        : "1.2.1"
+            threeten        : "1.2.1",
+            butterKnife     : "10.1.0"
 
     ]
 
@@ -38,7 +39,9 @@ ext {
             lifecycleExt    : "androidx.lifecycle:lifecycle-extensions:$versions.lifecycle",
             lifecycleKapt   : "androidx.lifecycle:lifecycle-compiler:$versions.lifecycle",
             recyclerView    : "androidx.recyclerview:recyclerview:$versions.recyclerView",
-            material        : "com.google.android.material:material:$versions.material"
+            material        : "com.google.android.material:material:$versions.material",
+            butterKnife    : "com.jakewharton:butterknife:$versions.butterKnife",
+            butterKnifeKapt: "com.jakewharton:butterknife-compiler:$versions.butterKnife"
     ]
 
     kotlin = [

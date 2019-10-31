@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">RickAndMortyMVVM</string>
+    <string name="error_dialog_header">Error</string>
+    <string name="get_in_touch_button_label">Get in touch</string>
+    <string name="planet_label">Planet:\n%1$s</string>
+    <string name="type_label">Type:\n%1$s</string>
 </resources>

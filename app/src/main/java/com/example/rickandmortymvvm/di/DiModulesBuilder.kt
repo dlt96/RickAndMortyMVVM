@@ -6,7 +6,7 @@ object DiModulesBuilder {
         DataModules.apiModule,
         DataModules.repository,
         DataModules.errorHandler,
-        DomainModules.useCaseModules
-//        PresentationModules
+        DomainModules.useCaseModules,
+        PresentationModules.mainModule
     )
 }

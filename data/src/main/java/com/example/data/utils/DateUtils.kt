@@ -7,7 +7,7 @@ import org.threeten.bp.format.DateTimeFormatter
 object DateUtils {
 
     fun stringToDate(dateString: String): LocalDate {
-        val dateTimeFormatter : DateTimeFormatter = DateTimeFormatter.ISO_LOCAL_DATE_TIME
-        return LocalDate.parse(dateString, dateTimeFormatter)
+        val dateTimeFormatter : DateTimeFormatter = DateTimeFormatter.ISO_DATE
+        return LocalDate.parse(dateString.substring(0,10), dateTimeFormatter)
     }
 }
