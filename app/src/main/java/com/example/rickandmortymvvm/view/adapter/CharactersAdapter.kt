@@ -23,20 +23,21 @@ class CharactersAdapter(
             oldItem.areContentsTheSame(newItem)
     }) {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = LayoutInflater.from(parent.context).run {
-        when (viewType) {
-            HomeItemViewType -> {
-                inflate(R.layout.character_list_item, parent, false).let {
-                    CharacterListItemViewHolder.CharacterViewHolder(it)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) =
+        LayoutInflater.from(parent.context).run {
+            when (viewType) {
+                HomeItemViewType -> {
+                    inflate(R.layout.character_list_item, parent, false).let {
+                        CharacterListItemViewHolder.CharacterViewHolder(it)
+                    }
                 }
-            } else ->
-        {
-            inflate(R.layout.loading_holder, parent, false).let { view ->
-                CharacterListItemViewHolder.LoadingViewHolder(view, loadingReached)
+                else -> {
+                    inflate(R.layout.loading_holder, parent, false).let { view ->
+                        CharacterListItemViewHolder.LoadingViewHolder(view, loadingReached)
+                    }
+                }
             }
         }
-        }
-    }
 
     override fun onBindViewHolder(holder: CharacterListItemViewHolder, position: Int) {
         when (val model = getItem(position)) {

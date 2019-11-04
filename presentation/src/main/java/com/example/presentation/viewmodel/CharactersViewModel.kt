@@ -16,6 +16,7 @@ import com.example.presentation.mapper.CharacterDisplayMapper
 import com.example.presentation.mapper.ErrorDisplayMapper
 import com.example.presentation.model.CharacterDisplayModel
 import com.example.presentation.model.ErrorDisplayModel
+import com.example.presentation.model.ListItemDisplayModel
 import com.example.presentation.model.TransitionDisplay
 import kotlinx.coroutines.launch
 
@@ -36,7 +37,7 @@ class CharactersViewModel(
         display
     }
 
-    val listDisplay: LiveData<Either<ErrorDisplayModel, List<CharacterDisplayModel>>> =
+    val listDisplay: LiveData<Either<ErrorDisplayModel, List<ListItemDisplayModel>>>? =
         Transformations.map(characterList) {
             it.biMap(
                 { error ->

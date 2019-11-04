@@ -61,7 +61,7 @@ class CharacterListFragment : Fragment() {
         )
 
         recyclerView.adapter = adapter
-        viewModel.listDisplay.observe(this, Observer { characters ->
+        viewModel.listDisplay?.observe(this, Observer { characters ->
             characters.fold({
                 showError(it)
             }, { list ->

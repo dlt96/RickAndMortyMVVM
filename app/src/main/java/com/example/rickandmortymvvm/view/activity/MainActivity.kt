@@ -26,8 +26,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         ButterKnife.bind(this)
-        supportFragmentManager?.beginTransaction()?.replace(R.id.container, CharacterListFragment.newInstance())
-            ?.commitNow()
+        supportFragmentManager.beginTransaction().replace(R.id.container, CharacterListFragment.newInstance())
+            .commitNow()
 
         charactersViewModel.detailDisplay.observe(this, Observer { transition ->
             transition?.let {
